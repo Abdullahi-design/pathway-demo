@@ -1,0 +1,39 @@
+(Transcribed by TurboScribe.ai. Go Unlimited to remove this message.)
+
+Hey, so I'm going to go through one of the challenges that we're currently facing that should save the team a lot of time and headache. And better to talk about it than to honestly write it all out. So the platform has a function called a create pathway to do where you can create a pathway from a template created from scratch or imported pathway using JSON because the pathways are in JSON form or the nodes and the pathway. 
+
+And so basically, and I'll get into what it would look like, you can give it a name, like, we can even use like one of these right text support, you give it you have a name, for examples of agent speech. So off the bat, this is not the best right? Because, you know, maybe a customer is giving us a lot of audio files and audio clips, maybe a customer is giving us to your audio files and audio clips to hear our call sound, they're giving us like the actual scripts of the use cases and how they go. And maybe some context that's really important. 
+
+So off the bat, it's pretty hard to generate that just looking at this with all that information that we have. So that's like one of the first problems, right? Like, how do we actually feed this something, feed this enough information to generate the proper pathway, because whatever we put here, it's not going to be enough. And so let's say we have this right, we try and use what the platform already gives us. 
+
+So it'll take a little bit of time. I'm going to pause my video. So you don't see my face for three minutes. 
+
+So off the bat, you can see it takes a long time for this to generate to so this is a very small thing. But ideally, we want these pathways generated very quickly. As a small note, so and I would encourage like playing around with this a little bit too, to get a sense of what's going on. 
+
+And I'll give context as to like, what is probably a better way for things to show up in the nodes. But generally, like, again, a big part of this is, how would you like create some, like system that we can actually like use and implement to like create our own pathway generator. So effectively, it's someone has all the context from the customer has all the context from how we build pathways and whatever, and is able to maybe not single shot, but like, get very, very close to something that is production ready, maybe 75% of the way there. 
+
+And then so I'll also show something else just to keep giving context. Once this is done, pausing again, and this is a pathway that was generated. So as someone like myself, who's like seen these a lot and enough, I would kind of consider this as like, not really the best. 
+
+And why is that the case? Because it's not just like the prompt in the pathway, which definitely is a part of it. It's also, you know, from all the context we have from the customer and all the things that we get, we should have more robust prompts to catch edge cases and things that are coming up. Right now, this doesn't do that. 
+
+It's not very robust. And let's say, like this tone prompt is robust. But again, it's like, it's very basic, there's no context. 
+
+And we can't add enough for it to know how to create different scenarios or different whatever's for it to create a better prompt. And there's also loop conditions where, you know, it might have to loop on itself or something doesn't happen doesn't even account for these. You know, we have our global prompt here, too, which they do put in place. 
+
+But again, it's a very basic one. And we've tried like adding a lot more context into these things, but we end up getting sort of the same output. And so we should be getting better, more refined, closer to protection level outputs, when we give it like more information. 
+
+But right now, that equation doesn't actually work. And that's what we need to fix and solve when we initially generate a pathway so that we can reduce the amount of time it takes for a team to like build and iterate on something versus like, hey, we're like pretty damn near there. So small tweaks and touches. 
+
+And so that's basically what I want you or whoever's watching this to like solve is giving some spec written description outline of how you would approach solving this problem. And you can use whatever you want, right? If it's like straight coding tools, like whatever, we just need this problem to be solved. And I really just want to hear more about how you're thinking about solving it. 
+
+What is your approach? What do you think needs to be fixed? And some of this will require some like info gathering, right? Like you might need to play with the platform more, you might need to like do some research, whatever. I'm really looking for the comprehensiveness of your approach and solving this challenge. If there are any questions about the case study, feel free to forward them to HOS. 
+
+And something else too is, again, like even these like edges here, which determines where the agent goes. Before I forget, this is not correct. It should be basically filling this out. 
+
+But it's not. And we are able to do a lot of that already with the API documentation. So that's a bit of an issue as well. 
+
+And there's one other thing I wanted to say, and there's also other configurations, right, that we want to ideally get in the first go, right? Because our team has specifications of what we know is a good interruption threshold, voice settings to put on, we want to have like the ability to configure these two. When we are first creating a pathway, which again, we don't have the ability to so we should be able to pick the voice, the settings, the pathway, the nodes, all for click of a button. So this can be solved.
+
+This will save us a bajillion hours and bajillion brain cells. That was a spiel.
+
+(Transcribed by TurboScribe.ai. Go Unlimited to remove this message.)

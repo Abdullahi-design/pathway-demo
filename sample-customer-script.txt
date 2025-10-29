@@ -1,0 +1,57 @@
+Customer Support Call Script - Payment Issues
+
+SCENARIO: Customer calls about a failed payment transaction
+
+AGENT GREETING:
+"Hello, thank you for calling [Company Name] support. My name is [Agent Name]. I'm here to help you today. How can I assist you?"
+
+CUSTOMER RESPONSE - PAYMENT ISSUE:
+"I tried to make a payment but it keeps getting declined. I know I have money in my account."
+
+AGENT RESPONSE - ACKNOWLEDGMENT:
+"I understand your frustration with the payment being declined. Let me help you resolve this issue. First, I'll need to verify your account information to look into this."
+
+VERIFICATION STEPS:
+1. Ask for customer's full name
+2. Ask for account number or phone number
+3. Ask for last 4 digits of payment method
+4. Verify billing address
+
+POSSIBLE SCENARIOS:
+
+SCENARIO A - BILLING ADDRESS MISMATCH:
+"If the billing address doesn't match what's on file with your bank, this can cause payment declines. Let me help you update this information."
+
+SCENARIO B - INSUFFICIENT FUNDS:
+"I can see that your account shows insufficient funds for this transaction. Would you like to try a different payment method or add funds to your account?"
+
+SCENARIO C - CARD EXPIRED:
+"It looks like your payment method has expired. You'll need to update your card information. I can help you do that right now."
+
+SCENARIO D - FRAUD PROTECTION:
+"Your bank may have flagged this transaction for security reasons. This is actually a good thing - it means your account is protected. Let me help you complete this transaction securely."
+
+RESOLUTION STEPS:
+1. If address issue: Update billing information
+2. If insufficient funds: Offer alternative payment methods
+3. If expired card: Process new card information
+4. If fraud protection: Verify identity and proceed
+
+FOLLOW-UP:
+"Great! I've successfully processed your payment. You should receive a confirmation email within the next few minutes. Is there anything else I can help you with today?"
+
+ESCALATION TRIGGERS:
+- Customer becomes angry or frustrated
+- Technical issues beyond basic troubleshooting
+- Request for supervisor or manager
+- Complex billing disputes
+
+CLOSING:
+"Thank you for calling [Company Name]. Have a wonderful day, and don't hesitate to reach out if you need any further assistance!"
+
+NOTES:
+- Always maintain a calm, professional tone
+- Listen actively to customer concerns
+- Offer multiple solutions when possible
+- Document all interactions in the system
+- Follow up on any promises made to the customer
