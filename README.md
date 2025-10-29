@@ -179,7 +179,7 @@ This project is licensed under the MIT License.
 
 ## Demo
 
-Live demo available at: [https://pathway-demo.vercel.app](https://pathway-demo.vercel.app)
+Live demo available at: [https://pathway-demo-three.vercel.app](https://pathway-demo-three.vercel.app)
 
 ---
 
