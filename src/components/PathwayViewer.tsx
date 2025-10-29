@@ -10,6 +10,7 @@ import ReactFlow, {
   useEdgesState,
   Controls,
   Background,
+  BackgroundVariant,
   MiniMap,
 } from "reactflow";
 import "reactflow/dist/style.css";
@@ -143,7 +144,7 @@ export function PathwayViewer({ pathwayData, onRegenerate, isRegenerating }: Pat
             >
               <Controls />
               <MiniMap />
-              <Background variant="dots" gap={12} size={1} />
+              <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
             </ReactFlow>
           </div>
 
