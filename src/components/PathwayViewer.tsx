@@ -101,6 +101,7 @@ export function PathwayViewer({ pathwayData, onRegenerate, isRegenerating }: Pat
               onClick={onRegenerate}
               disabled={isRegenerating}
               variant="outline"
+              className="text-white"
               size="sm"
             >
               <RefreshCw className={`h-4 w-4 mr-2 ${isRegenerating ? "animate-spin" : ""}`} />
@@ -151,7 +152,7 @@ export function PathwayViewer({ pathwayData, onRegenerate, isRegenerating }: Pat
             <summary className="cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-800">
               View Raw JSON
             </summary>
-            <pre className="mt-2 p-4 bg-gray-100 rounded-lg text-xs overflow-auto">
+            <pre className="bg-black text-white mt-2 p-4 rounded-lg text-xs overflow-auto">
               {JSON.stringify(pathwayData, null, 2)}
             </pre>
           </details>

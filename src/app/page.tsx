@@ -13,6 +13,7 @@ export default function Home() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isRegenerating, setIsRegenerating] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [error, setError] = useState<string | null>(null);
 
   const handleFilesChange = (files: File[]) => {
     setUploadedFiles(files);
@@ -21,6 +22,7 @@ export default function Home() {
   const handleGenerate = async (config: any) => {
     setIsGenerating(true);
     setProgress(0);
+    setError(null);
     
     // Simulate progress
     const progressInterval = setInterval(() => {
@@ -49,11 +51,23 @@ export default function Home() {
         }),
       });
 
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to generate pathway');
+      }
+
       const data = await response.json();
+      
+      // Check if the response contains an error
+      if (data.error) {
+        throw new Error(data.message || 'Failed to generate pathway');
+      }
+      
       setPathwayData(data);
       setProgress(100);
     } catch (error) {
       console.error("Error generating pathway:", error);
+      setError(error instanceof Error ? error.message : 'Failed to generate pathway');
     } finally {
       setIsGenerating(false);
       setTimeout(() => setProgress(0), 1000);
@@ -62,6 +76,7 @@ export default function Home() {
 
   const handleRegenerate = async () => {
     setIsRegenerating(true);
+    setError(null);
     try {
       const response = await fetch("/api/generate", {
         method: "POST",
@@ -76,10 +91,21 @@ export default function Home() {
         }),
       });
 
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to regenerate pathway');
+      }
+
       const data = await response.json();
+      
+      if (data.error) {
+        throw new Error(data.message || 'Failed to regenerate pathway');
+      }
+      
       setPathwayData(data);
     } catch (error) {
       console.error("Error regenerating pathway:", error);
+      setError(error instanceof Error ? error.message : 'Failed to regenerate pathway');
     } finally {
       setIsRegenerating(false);
     }
@@ -115,6 +141,25 @@ export default function Home() {
                 Generating pathway...
               </div>
               <Progress value={progress} className="h-2" />
+            </div>
+          )}
+
+          {/* Error Display */}
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="flex items-center gap-2 text-red-800">
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                </svg>
+                <span className="font-medium">Error generating pathway</span>
+              </div>
+              <p className="text-red-700 mt-1">{error}</p>
+              <button 
+                onClick={() => setError(null)}
+                className="text-red-600 hover:text-red-800 text-sm mt-2 underline"
+              >
+                Dismiss
+              </button>
             </div>
           )}
 

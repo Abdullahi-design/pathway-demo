@@ -50,17 +50,17 @@ export function UploadSection({ onFilesChange }: UploadSectionProps) {
               Choose Files
             </label>
           </Button>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-sm text-muted-foreground text-black">
             Supports .txt, .json, .mp3 files
           </span>
         </div>
         
         {uploadedFiles.length > 0 && (
           <div className="space-y-2">
-            <h4 className="text-sm font-medium">Uploaded Files:</h4>
+            <h4 className="text-sm font-medium text-black">Uploaded Files:</h4>
             <div className="space-y-1">
               {uploadedFiles.map((file, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground text-black">
                   {getFileIcon(file)}
                   <span>{file.name}</span>
                   <span className="text-xs">({(file.size / 1024).toFixed(1)} KB)</span>

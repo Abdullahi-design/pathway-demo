@@ -39,9 +39,9 @@ export function ConfigForm({ onSubmit, isLoading }: ConfigFormProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6 text-black">
           <div className="space-y-2">
-            <Label htmlFor="pathway-name">Pathway Name</Label>
+            <Label htmlFor="pathway-name" className="text-black">Pathway Name</Label>
             <Input
               id="pathway-name"
               placeholder="Enter pathway name..."
@@ -57,10 +57,10 @@ export function ConfigForm({ onSubmit, isLoading }: ConfigFormProps) {
               <SelectTrigger>
                 <SelectValue placeholder="Select voice setting" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Default">Default</SelectItem>
-                <SelectItem value="Calm">Calm</SelectItem>
-                <SelectItem value="Energetic">Energetic</SelectItem>
+              <SelectContent className="bg-background">
+                <SelectItem value="Default" className="cursor-pointer">Default</SelectItem>
+                <SelectItem value="Calm" className="cursor-pointer">Calm</SelectItem>
+                <SelectItem value="Energetic" className="cursor-pointer">Energetic</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -76,7 +76,7 @@ export function ConfigForm({ onSubmit, isLoading }: ConfigFormProps) {
               value={config.interruptionThreshold}
               onChange={(e) => setConfig({ ...config, interruptionThreshold: parseFloat(e.target.value) })}
             />
-            <p className="text-xs text-muted-foreground">Range: 0.0 - 1.0</p>
+            <p className="text-xs text-muted-foreground text-black">Range: 0.0 - 1.0</p>
           </div>
 
           <div className="space-y-3">
@@ -100,7 +100,7 @@ export function ConfigForm({ onSubmit, isLoading }: ConfigFormProps) {
             </RadioGroup>
           </div>
 
-          <Button type="submit" className="w-full" disabled={isLoading}>
+          <Button type="submit" className="w-full text-white" disabled={isLoading} variant={"outline"}>
             {isLoading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
